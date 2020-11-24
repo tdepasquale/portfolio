@@ -34,7 +34,7 @@ export const OurWork = () => {
       <StyledMovie>
         <h2>The Athlete</h2>
         <div className="line"></div>
-        <Link>
+        <Link to="/work/the-athlete">
           <img src={athlete} alt="athlete" />
         </Link>
       </StyledMovie>
@@ -42,7 +42,7 @@ export const OurWork = () => {
       <StyledMovie>
         <h2>The Racer</h2>
         <div className="line"></div>
-        <Link>
+        <Link to="/work/the-racer">
           <img src={theRacer} alt="the racer" />
         </Link>
       </StyledMovie>
@@ -50,7 +50,7 @@ export const OurWork = () => {
       <StyledMovie>
         <h2>Good Times</h2>
         <div className="line"></div>
-        <Link>
+        <Link to="/work/good-times">
           <img src={goodTimes} alt="good times" />
         </Link>
       </StyledMovie>
