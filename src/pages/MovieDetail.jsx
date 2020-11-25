@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { MovieState } from "../movieState";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
-const StyledDetails = styled.div`
+const StyledDetails = styled(motion.div)`
   color: white;
 `;
 
@@ -82,7 +84,11 @@ export const MovieDetail = () => {
   if (!currentMovie) return <p>Loading...</p>;
 
   return (
-    <StyledDetails>
+    <StyledDetails
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit">
       <StyledHeadline>
         <h2>{currentMovie.title}</h2>
         <img src={currentMovie.mainImg} alt="movie" />
