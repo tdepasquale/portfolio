@@ -76,7 +76,6 @@ export const MovieDetail = () => {
   const [currentMovie, setCurrentMovie] = useState(null);
 
   useEffect(() => {
-    console.log(url);
     const movie = movies.find((movie) => movie.url === url);
     setCurrentMovie(movie);
   }, [movies, url]);
