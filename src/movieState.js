@@ -10,7 +10,7 @@ export const MovieState = () => {
     {
       title: "The Athlete",
       mainImg: athlete,
-      objectPosition: "center center",
+      objectPosition: "left center",
       secondaryImg: athlete2,
       url: "/work/the-athlete",
       awards: [

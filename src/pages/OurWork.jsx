@@ -22,6 +22,9 @@ const StyledWork = styled(motion.div)`
   h2 {
     padding: 1rem 0;
   }
+  @media screen and (max-width: 1300px) {
+    padding: 2rem;
+  }
 `;
 
 const StyledMovie = styled(motion.div)`
@@ -82,7 +85,12 @@ export const OurWork = () => {
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <StyledHide>
-            <motion.img variants={photoAnimation} src={athlete} alt="athlete" />
+            <motion.img
+              style={{ objectPosition: "left center" }}
+              variants={photoAnimation}
+              src={athlete}
+              alt="athlete"
+            />
           </StyledHide>
         </Link>
       </StyledMovie>

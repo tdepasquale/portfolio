@@ -6,6 +6,7 @@ import { waveAnimation } from "../animation";
 const StyledWaveSVG = styled.svg`
   position: absolute;
   left: 0;
+  top: 50%;
   z-index: 1;
 `;
 

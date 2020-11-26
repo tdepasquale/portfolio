@@ -7,11 +7,18 @@ const StyledContact = styled(motion.div)`
   padding: 5rem 10rem;
   color: #353535;
   min-height: 90vh;
+  @media screen and (max-width: 1500px) {
+    padding: 2rem;
+    font-size: 5px;
+  }
 `;
 
 const StyledTitle = styled.div`
   margin-bottom: 4rem;
   color: black;
+  @media screen and (max-width: 1500px) {
+    margin-top: 5rem;
+  }
 `;
 
 const StyledHide = styled.div`
@@ -23,6 +30,10 @@ const StyledCircle = styled.div`
   width: 3rem;
   height: 3rem;
   background-color: #353535;
+  @media screen and (max-width: 1500px) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 `;
 
 const StyledSocial = styled(motion.div)`
@@ -30,6 +41,11 @@ const StyledSocial = styled(motion.div)`
   align-items: center;
   h2 {
     margin: 2rem;
+  }
+  @media screen and (max-width: 1500px) {
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 `;
 
