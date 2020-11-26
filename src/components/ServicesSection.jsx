@@ -10,6 +10,8 @@ import {
   StyledImageContainer,
 } from "../styles";
 import styled from "styled-components";
+import { useScroll } from "./useScroll";
+import { scrollRevealAnimation } from "../animation";
 
 const StyledServicesContainer = styled(StyledSectionContainer)`
   h2 {
@@ -41,8 +43,13 @@ const StyledCard = styled.div`
 `;
 
 export const ServicesSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <StyledServicesContainer>
+    <StyledServicesContainer
+      ref={element}
+      variants={scrollRevealAnimation}
+      animate={controls}
+      initial="hidden">
       <StyledDescription>
         <h2>
           High <span>quality</span> service.

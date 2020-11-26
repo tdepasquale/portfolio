@@ -4,10 +4,15 @@ import { FaqSection } from "../components/FaqSection";
 import { ServicesSection } from "../components/ServicesSection";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
+import styled from "styled-components";
+
+const StyledAboutUs = styled(motion.div)`
+  overflow: hidden;
+`;
 
 export const AboutUs = () => {
   return (
-    <motion.div
+    <StyledAboutUs
       variants={pageAnimation}
       initial="hidden"
       animate="show"
@@ -15,6 +20,6 @@ export const AboutUs = () => {
       <AboutSection />
       <ServicesSection />
       <FaqSection />
-    </motion.div>
+    </StyledAboutUs>
   );
 };

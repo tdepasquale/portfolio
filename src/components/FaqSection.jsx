@@ -1,8 +1,10 @@
 import { AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
+import { scrollRevealAnimation } from "../animation";
 import { StyledSectionContainer } from "../styles";
 import { Toggle } from "./Toggle";
+import { useScroll } from "./useScroll";
 
 const StyledFaqContainer = styled(StyledSectionContainer)`
   display: block;
@@ -32,8 +34,13 @@ const StyledFaqContainer = styled(StyledSectionContainer)`
 `;
 
 export const FaqSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <StyledFaqContainer>
+    <StyledFaqContainer
+      variants={scrollRevealAnimation}
+      ref={element}
+      animate={controls}
+      initial="hidden">
       <h2>
         Any Questions? <span>FAQ</span>
       </h2>
