@@ -90,7 +90,11 @@ export const MovieDetail = () => {
       exit="exit">
       <StyledHeadline>
         <h2>{currentMovie.title}</h2>
-        <img src={currentMovie.mainImg} alt="movie" />
+        <img
+          style={{ objectPosition: `${currentMovie.objectPosition}` }}
+          src={currentMovie.mainImg}
+          alt="movie"
+        />
       </StyledHeadline>
       <StyledAwards>
         {currentMovie.awards.map((award) => (

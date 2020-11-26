@@ -10,6 +10,7 @@ export const MovieState = () => {
     {
       title: "The Athlete",
       mainImg: athlete,
+      objectPosition: "center center",
       secondaryImg: athlete2,
       url: "/work/the-athlete",
       awards: [
@@ -33,6 +34,7 @@ export const MovieState = () => {
     {
       title: "Good Times",
       mainImg: goodtimes,
+      objectPosition: "center bottom",
       url: "/work/good-times",
       secondaryImg: goodtimes2,
       awards: [
@@ -42,7 +44,7 @@ export const MovieState = () => {
             "“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”",
         },
         {
-          title: "Fresh look on a brutal sport.",
+          title: "A love story for the ages.",
           description:
             "“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”",
         },
@@ -56,6 +58,7 @@ export const MovieState = () => {
     {
       title: "The Racer",
       mainImg: theracer,
+      objectPosition: "center top",
       url: "/work/the-racer",
       secondaryImg: theracer2,
       awards: [
@@ -65,7 +68,7 @@ export const MovieState = () => {
             "“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”",
         },
         {
-          title: "Fresh look on a brutal sport.",
+          title: "Feel the speed.",
           description:
             "“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”",
         },
