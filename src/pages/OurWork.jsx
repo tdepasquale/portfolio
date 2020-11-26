@@ -5,7 +5,14 @@ import goodTimes from "../img/goodtimes-small.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
+import {
+  fadeAnimation,
+  lineAnimation,
+  pageAnimation,
+  photoAnimation,
+  twirlAnimation,
+  twirlContainer,
+} from "../animation";
 
 const StyledWork = styled(motion.div)`
   min-height: 100vh;
@@ -20,7 +27,7 @@ const StyledMovie = styled.div`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
-    background-color: #ccc;
+    background-color: #23d997;
     margin-bottom: 3rem;
   }
   img {
@@ -28,6 +35,29 @@ const StyledMovie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+`;
+
+const StyledHide = styled.div`
+  overflow: hidden;
+`;
+
+const StyledFrame1 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100vh;
+  background-color: #fffebf;
+  z-index: 2;
+`;
+const StyledFrame2 = styled(StyledFrame1)`
+  background-color: #ff8efb;
+`;
+const StyledFrame3 = styled(StyledFrame1)`
+  background-color: #8ed2ff;
+`;
+const StyledFrame4 = styled(StyledFrame1)`
+  background-color: #8effa0;
 `;
 
 export const OurWork = () => {
@@ -38,11 +68,19 @@ export const OurWork = () => {
       animate="show"
       exit="exit"
       style={{ backgroundColor: "white" }}>
+      <motion.div variants={twirlContainer}>
+        <StyledFrame1 variants={twirlAnimation}></StyledFrame1>
+        <StyledFrame2 variants={twirlAnimation}></StyledFrame2>
+        <StyledFrame3 variants={twirlAnimation}></StyledFrame3>
+        <StyledFrame4 variants={twirlAnimation}></StyledFrame4>
+      </motion.div>
       <StyledMovie>
-        <h2>The Athlete</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fadeAnimation}>The Athlete</motion.h2>
+        <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-athlete">
-          <img src={athlete} alt="athlete" />
+          <StyledHide>
+            <motion.img variants={photoAnimation} src={athlete} alt="athlete" />
+          </StyledHide>
         </Link>
       </StyledMovie>
 
