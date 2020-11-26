@@ -1,6 +1,8 @@
+import { AnimateSharedLayout } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import { StyledSectionContainer } from "../styles";
+import { Toggle } from "./Toggle";
 
 const StyledFaqContainer = styled(StyledSectionContainer)`
   display: block;
@@ -18,13 +20,13 @@ const StyledFaqContainer = styled(StyledSectionContainer)`
     width: 100%;
   }
   .question {
-    padding: 3rem 0rem;
+    padding: 1rem 0rem;
     cursor: pointer;
   }
   .answer {
     padding: 2rem 0rem;
     p {
-      padding: 2rem 0rem;
+      padding: 1rem 0rem;
     }
   }
 `;
@@ -35,50 +37,44 @@ export const FaqSection = () => {
       <h2>
         Any Questions? <span>FAQ</span>
       </h2>
-      <div className="question">
-        <h4>How Do I Start</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, iure.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Daily Schedule</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, iure.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Different Payment Methods</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, iure.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>What Products do You Offer?</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, iure.
-          </p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
+      <AnimateSharedLayout>
+        <Toggle title="How Do I Start">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis, iure.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Daily Schedule">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis, iure.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Different Payment Methods">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis, iure.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="What Products do You Offer">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis, iure.
+            </p>
+          </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </StyledFaqContainer>
   );
 };
