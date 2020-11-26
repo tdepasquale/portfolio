@@ -13,6 +13,7 @@ import {
   twirlAnimation,
   twirlContainer,
 } from "../animation";
+import { useScroll } from "../components/useScroll";
 
 const StyledWork = styled(motion.div)`
   min-height: 100vh;
@@ -23,7 +24,7 @@ const StyledWork = styled(motion.div)`
   }
 `;
 
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
@@ -61,6 +62,8 @@ const StyledFrame4 = styled(StyledFrame1)`
 `;
 
 export const OurWork = () => {
+  const [element1, controls1] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <StyledWork
       variants={pageAnimation}
@@ -84,19 +87,35 @@ export const OurWork = () => {
         </Link>
       </StyledMovie>
 
-      <StyledMovie>
+      <StyledMovie
+        ref={element1}
+        variants={fadeAnimation}
+        animate={controls1}
+        initial="hidden">
         <h2>The Racer</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-racer">
-          <img src={theRacer} alt="the racer" />
+          <img
+            style={{ objectPosition: "center top" }}
+            src={theRacer}
+            alt="the racer"
+          />
         </Link>
       </StyledMovie>
 
-      <StyledMovie>
+      <StyledMovie
+        ref={element2}
+        variants={fadeAnimation}
+        animate={controls2}
+        initial="hidden">
         <h2>Good Times</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/good-times">
-          <img src={goodTimes} alt="good times" />
+          <img
+            style={{ objectPosition: "center bottom" }}
+            src={goodTimes}
+            alt="good times"
+          />
         </Link>
       </StyledMovie>
     </StyledWork>
